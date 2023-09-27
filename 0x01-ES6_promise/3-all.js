@@ -1,9 +1,10 @@
-const { uploadPhoto, createUser } = require('./utils.js');
+import { uploadPhoto, createUser } from './utils.js';
+
 export default function handleProfileSignup() {
-  const promises = [uploadPhoto(), createUser()];
+  const promises = [ uploadPhoto(), createUser() ];
   return Promise.all(promises)
-    .then(([body, user]) => {
-      console.log(`body: ${photo.body} firstName: ${user.firstName} lastName: ${user.lastName}`);
+    .then((vals) => {
+      console.log(`${vals[0].body} ${vals[1].firstName} ${vals[1].lastName}`);
     })
     .catch((error) => {
       console.error('Signup system offline');
