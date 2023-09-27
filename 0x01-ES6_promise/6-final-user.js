@@ -5,7 +5,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
   return Promise.allSettled([signUpUser(firstName, lastName), uploadPhoto(filename)])
     .then((data) => {
       data[1].value = `Error: ${data[1].reason.message}`;
-      //delete data[1].reason;
+      delete data[1].reason;
       return data;
     });
 }
