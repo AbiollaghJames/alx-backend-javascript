@@ -26,7 +26,7 @@ export default class Airport {
     this._code = val;
   }
 
-  toString() {
-    return `Airport [${this._code}] { _name: '${this._name}', _code: '${this._code}' }`;
+  get [symbol.toStringTag] {
+    return `${this._code}`;
   }
 }
