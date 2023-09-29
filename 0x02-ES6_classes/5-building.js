@@ -3,12 +3,11 @@ export default class Building {
     this._sqft = sqft;
 
     if (this.constructor === Building) {
-      throw new Error('Abstacr class cannot be instantiated');
-    }
-    if (typeof this.evacuationWarningMessage !== 'function') {
-      throw new Error (
-        'Class extending Building must override evacuationWarningMessage',
-      );
+      if (typeof this.evacuationWarningMessage !== 'function') {
+        throw new Error(
+          'Class extending Building must override evacuationWarningMessage',
+        );
+      }
     }
   }
 
