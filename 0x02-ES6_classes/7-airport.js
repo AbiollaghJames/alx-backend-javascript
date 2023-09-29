@@ -26,7 +26,7 @@ export default class Airport {
     this._code = val;
   }
 
-  get [symbol.tString]() {
-    return `${this._code}`;
+  toString() {
+    return `Airport [${this._code}] { _name: '${this._name}', _code: '${this._code}' }`;
   }
 }
