@@ -20,3 +20,9 @@ class Teacher {
       this.location = location;
     }
 }
+
+interface Directors extends Teacher {
+  numberOfReports: number;
+}
+
+
