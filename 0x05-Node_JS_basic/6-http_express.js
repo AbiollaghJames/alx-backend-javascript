@@ -1,5 +1,6 @@
-const { express } = require("express");
+const express = require("express");
 const app = express();
+
 const port = 1245;
 
 app.get('/', (req, res) => {
@@ -9,4 +10,5 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log("...");
 });
+
 module.exports = app;
