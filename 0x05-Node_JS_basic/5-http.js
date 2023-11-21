@@ -8,7 +8,7 @@ const host = '127.0.0.1';
 const port = 1245;
 
 const app = http.createServer(async (req, res) => {
-  res.setHeader(200, 'Content-Type', 'text/plain');
+    res.writeHead(200, 'Content-Type', 'text/plain');
 
   const { url } = req;
 
@@ -28,7 +28,7 @@ const app = http.createServer(async (req, res) => {
 });
 
 app.listen(port, host, () => {
-  console.log(`Running on port ${port}/`);
+  console.log(`Running on port ${port}`);
 });
 
 module.exports = app;
