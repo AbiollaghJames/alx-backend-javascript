@@ -24,4 +24,5 @@ function readDatabase(dbPath) {
     });
 }
 
+export default readDatabase;
 module.exports = readDatabase;
