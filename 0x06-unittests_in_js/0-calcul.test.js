@@ -1,5 +1,5 @@
 var assert = require("assert");
-var calculateNumber = require("./0-calcul");
+const calculateNumber = require("./0-calcul");
 
 describe("calculateNumber", function() {
     it("Should test the rounded part", function() {
@@ -13,7 +13,6 @@ describe("calculateNumber", function() {
         assert.strictEqual(calculateNumber(3, 4), 7);
         assert.strictEqual(calculateNumber(2, -5), -3);
         assert.strictEqual(calculateNumber(5, -4), 1);
-
     });
     it("Casts non number to number and return rounded sum", function() {
         assert.strictEqual(calculateNumber('2', 8), 10);
