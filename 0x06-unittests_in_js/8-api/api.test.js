@@ -1,23 +1,19 @@
-const expect = require("chai").expect;
-const app = require("./api");
-const request = require("request");
-const { describe, it } = require("mocha");
+const request = require('request');
+const { expect } = require('chai');
 
-describe("Express API Test", () => {
-    const params = {
-        url: "http://localhost:7865",
-        method: "GET",
-    };
-    it("Tests status code", (done) => {
-        request(params, (err, res, body) => {
-            expect(res.statusCode).to.equal(200);
-            done();
-        });
+describe('Express API Test', () => {
+  describe('GET /', () => {
+    it('Check status code and body', (done) => {
+      const params = {
+        url: 'http://localhost:7865',
+        method: 'GET',
+      };
+
+      request(params,  (error, res, body) => {
+        expect(res.statusCode).to.equal(200);
+        expect(body).to.equal('Welcome to the payment system');
+        done();
+      });
     });
-    it("Tests body text", (done) => {
-        request(params, (err, res, body) => {
-            expect(res.statusCode).to.equal(200);
-            done();
-        });
-    });
+  });
 });
