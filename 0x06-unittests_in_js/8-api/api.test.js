@@ -1,7 +1,7 @@
-const chai = require("chai");
+const expect = require("chai").expect;
 const app = require("./api");
 const request = require("request");
-const expect = chai.expect;
+const { describe, it } = require("mocha");
 
 describe("Express API Test", () => {
     const params = {
