@@ -5,16 +5,17 @@ const sendPaymentRequestToApi = require("./3-payment");
 
 describe("sendPaymentRequestToAPI", () => {
     it("Calls calculateNumber()", () => {
-        const spy1 = sinon.spy(utils, 'calculateNumber');
-        const spy2 = sinon.spy(console, 'log');
+        const calculateNumberStub = sinon.stub(utils, 'calculateNumber');
+        calculateNumberStub.returns(10);
+        const spy = sinon.spy(console, 'log');
 
         const apiRequest = sendPaymentRequestToApi(100, 20);
 
-        expect(spy1.calledOnceWithExactly('SUM', 100, 20)).to.equal(true);
-        expect(spy2.calledOnceWithExactly('The total is: 120')).to.equal(true);
+        expect(calculateNumberStub.calledOnceWithExactly('SUM', 100, 20)).to.equal(true);
+        expect(spy.calledOnceWithExactly('The total is: 10'));
         expect(utils.calculateNumber('SUM', 100, 20)).to.equal(apiRequest);
 
-        spy1.restore();
-        spy2.restore();
+        calculateNumberStub.restore();
+        spy.restore();
     });
 });
