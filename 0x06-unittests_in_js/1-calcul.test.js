@@ -14,7 +14,7 @@ describe("calculateNumber", () => {
         });
         it("Tests addition of float numbers", () => {
             assert.strictEqual(calculateNumber(SUM, 3.7, 5.9), 10);
-            assert.strictEqual(calculateNumber(SUM, 0.0, 0.1), 0);
+            assert.strictEqual(calculateNumber(SUM, 1.4, 4.5), 6);
         });
     });
     describe("type SUBTRACT", () => {
@@ -26,7 +26,7 @@ describe("calculateNumber", () => {
         it("Tests subtraction of float numbers", () => {
             assert.strictEqual(calculateNumber(SUBTRACT, 6.5, 3.5), 3);
             assert.strictEqual(calculateNumber(SUBTRACT, 6.1, 3.5), 2);
-            assert.strictEqual(calculateNumber(SUBTRACT, 6.0, 5.0), 1);
+            assert.strictEqual(calculateNumber(SUBTRACT, 1.4, 4.5), -4);
             assert.strictEqual(calculateNumber(SUBTRACT, -6.5, -3.5), -3);
             assert.strictEqual(calculateNumber(SUBTRACT, 6.5, -3.0), 10);
         });
@@ -41,7 +41,8 @@ describe("calculateNumber", () => {
         });
         it("Tests Division of float numbers", () => {
             assert.strictEqual(calculateNumber(DIVIDE, 5.8, 1.5), 3);
-            assert.strictEqual(calculateNumber(DIVIDE, -5.8, 1.5), -3);
+            assert.strictEqual(calculateNumber(DIVIDE, 1.4, 4.5), 0.2);1.4, 0
+            assert.strictEqual(calculateNumber(DIVIDE, 1.4, 0), 'Error');
         });
     });
 });
